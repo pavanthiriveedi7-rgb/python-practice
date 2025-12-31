@@ -1,0 +1,175 @@
+        Lists
+
+Task 1:
+ 
+The E-Commerce Shopping Cart
+Scenario: You are building the checkout flow for Amazon. A user adds items, decides they don't want one, and then proceeds to checkout. Core Concepts: Adding (append), Removing (remove), Counting (len).
+
+The Task:
+
+Start with an empty list called cart.
+
+The user clicks "Add" on some items. Add these to the list.
+
+The user decides  to remove the one item unwanted is too expensive. Remove it from the list.
+
+Add some new item to the list.
+
+Print: "Your cart contains [X] items: [List of items]".
+
+
+
+
+code:
+
+
+cart = []
+
+
+cart.append("Laptop")
+cart.append("Mouse")
+cart.append("Keyboard")
+
+
+cart.remove("Mouse")
+
+   # Add "HDMI Cable" to the list
+cart.append("HDMI Cable")
+
+#  Calculate the count
+item_count = len(cart)
+
+# print all items
+print(f"Your cart contains {item_count} items: {cart}")
+
+
+
+Task-2:
+
+The "Daily Step Tracker" (Data Analysis)
+Scenario: A fitness app (like Fitbit) records the number of steps a user takes every day for a week. You need to analyze this data. Core Concepts: Math functions (sum, max, min), Indexing.
+
+The Task:
+
+Create a list: steps .
+
+Total: Calculate the total steps taken in the week.
+
+Average: Calculate the average daily steps (Total / Number of days).
+
+Best Day: Print the highest number of steps taken in a single day.
+
+Lazy Day: Print the lowest number of steps taken.
+
+
+code:
+
+
+steps = [4000, 7000, 10000, 2000, 8000, 5000, 12000]
+
+total_steps = sum(steps)
+average_steps = total_steps / len(steps)
+best_day = max(steps)
+lazy_day = min(steps)
+print(f"Total Steps: {total_steps}")
+print(f"Average Steps: {average_steps}") 
+print(f"Best Day: {best_day}")
+print(f"Lazy Day: {lazy_day}")
+
+
+
+Task -3:
+
+The Customer Support Queue (FIFO)
+Scenario: Customers are waiting in a chat queue to talk to a support agent. The first person to join the queue should be the first person served (First-In, First-Out). Core Concepts: pop(0) (removing from the front), append.
+
+The Task:
+
+Create a list queue .
+
+New Arrival: joins the chat. Add them to the end.
+
+Service: The agent is ready. Remove the first person from the list.
+
+Status: Print who is currently at the front of the line .
+
+
+code:
+
+
+
+
+queue = ["User1", "User2", "User3"]
+
+queue.append("User4")
+print(queue)
+current_user = queue.pop(0) 
+print(f"Now chatting with {current_user}")
+print(f"Next in line: {queue[0]}")
+print(f"Full queue: {queue}")
+
+
+
+
+Task-4:
+
+The Text Editor "Undo" Button (LIFO)
+Scenario: You are writing a text editor like Notepad. Every time the user types a word, it's saved. If they hit "Ctrl+Z" (Undo), the last word typed must be removed. Core Concepts: pop() (removing from the end), append.
+
+The Task:
+
+Start with actions .
+
+Undo: The user hits undo. Remove the very last item  and print "Undid action".
+
+Add it to the list.
+
+History: Print the current list of active actions.
+
+
+
+code:
+
+actions = ["venkata","pavan","kumar"]
+
+actions = ["venkata","pavan","kumar"]
+last_action = actions.pop()
+print(f"Undid action: {last_action}")
+actions.append("tiruveedhi")
+
+print(f"current: {actions}")
+
+
+
+Task -5:
+
+The Top 3 Scores (Sorting & Slicing)
+Scenario: A video game needs to display the "Leaderboard" showing only the top 3 high scores from a list of hundreds of players. Core Concepts: Sorting (sort), Slicing ([:3]).
+
+The Task:
+
+Create a list of raw scores.
+
+Sort: Sort the list in descending order (highest to lowest).
+
+Hint: Use scores.sort(reverse=True).
+
+Display: Create a new list called top_three that only contains the first 3 items of the sorted list.
+
+Print: "The  winners are: [top_three]".
+
+
+
+code:
+
+
+
+scores = [50, 10, 90, 30, 100, 20, 80]
+scores.sort(reverse=True)
+top_three = scores[:3]
+print(" Descending order: ",scores)
+print(f" top three members are:{top_three}")
+
+
+
+
