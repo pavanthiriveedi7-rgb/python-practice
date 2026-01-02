@@ -24,11 +24,11 @@ In Python, a function is defined using the def keyword, followed by a function n
 
 Example
 
-def my\_function():
+def my_function():
 
-&nbsp; print("Hello from a function")
+  print("Hello from a function")
 
-This creates a function named my\_function that prints "Hello from a function" when called.
+This creates a function named my_function that prints "Hello from a function" when called.
 
 
 
@@ -44,9 +44,9 @@ To call a function, write its name followed by parentheses:
 
 Example
 
-def my\_function():
+def my_function():
 
-&nbsp; print("Hello from a function")
+ print("Hello from a function")
 
 
 
@@ -58,9 +58,9 @@ You can call the same function multiple times:
 
 Example
 
-def my\_function():
+def my_function():
 
-&nbsp; print("Hello from a function")
+ print("Hello from a function")
 
 
 
@@ -88,13 +88,12 @@ Valid function names:
 
 
 
-calculate\_sum()
+calculate_sum()
 
-\_private\_function()
+_private_function()
 
 myFunction2()
 
-It's good practice to use descriptive names that explain what the function does.
 
 
 
@@ -1297,4 +1296,5 @@ def outer():
 outer()
 
 print("Global:", x)
+
 
