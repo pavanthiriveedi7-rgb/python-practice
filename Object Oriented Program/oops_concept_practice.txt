@@ -1,0 +1,285 @@
+c = lambda x,y: x* y
+print(c(10,20))
+
+
+output:
+200
+
+def wish(x):
+  if x>10:
+    print("morning")
+    wish(x-1)
+  else:
+    print("evening")
+wish(7)
+
+output:
+evening
+
+x = [10,20,1,3,5,9,7,8,6,4,3,2,1]
+fs = map(lambda i:i>1,x)
+print(list(fs))
+
+
+[True, True, False, True, True, True, True, True, True, True, True, True, False]
+
+
+import keyword
+print(keyword.kwlist)
+
+
+[ ]
+
+Start coding or generate with AI.
+
+[2]
+0s
+c = lambda x,y: x* y
+print(c(10,20))
+
+
+200
+
+[6]
+0s
+def wish(x):
+  if x>10:
+    print("morning:")
+    wish(x-1)
+  else:
+    print("evening:")
+wish(7)
+evening:
+
+[9]
+0s
+x = [10,20,1,3,5,9,7,8,6,4,3,2,1]
+fs = map(lambda i:i>1,x)
+print(list(fs))
+[True, True, False, True, True, True, True, True, True, True, True, True, False]
+
+[10]
+0s
+import keyword
+print(keyword.kwlist)
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+import keyword
+w = input("enter a keyword:")
+if keyword.iskeyword(w):
+  print(w,"is a keyword")
+else:
+  print(w,"is not a keyword.")
+
+
+
+output:
+enter a keyword:if
+if is a keyword
+
+
+
+a = input("enter a value:")
+b = input("enter a value:")
+c = a/b
+print("The value is :",c)
+print("Bye")
+
+output:
+enter a value:pavan
+enter a value:kumar
+--------------------------------------------------------------------------
+
+oops concept object oriented programming system
+
+
+Class: The Blueprint A Class is a template or a set of instructions. It defines what data an object will have and what it can do, but it doesn't represent a specific "thing" itself. It is a logical entity, not a physical one, and it occupies no memory until you use it.
+
+Object: The Instance An Object is a specific, "real-world" instance created from the class blueprint. When you create an object, the computer allocates memory for it. You can create as many objects as you want from a single class.
+
+
+#classes and objects
+#creating classes
+class test:
+  a = 10
+  b = 20
+print(test.a + test.b)
+
+output:
+30
+
+class wish:
+  def mng():
+    print("good morning")
+  def eng():
+    print("good evening")
+wish.mng()
+wish.eng()
+
+
+output:
+good morning
+good evening
+
+_ dict --> A dictionary containing the class's namespace (variables and methods).
+
+doc -->The documentation string (docstring) of the class, or None if undefined.
+
+name -->The name of the class as a string.
+
+module -->The name of the module in which the class was defined (usually main).
+
+bases --> A tuple containing the parent (base) classes that this class inherits from.
+
+
+class Employee:
+    
+    empCount = 0
+
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        Employee.empCount += 1
+
+
+print("Employee.__doc__:", Employee.__doc__)
+print("Employee.__name__:", Employee.__name__)
+print("Employee.__module__:", Employee.__module__)
+print("Employee.__bases__:", Employee.__bases__)
+print("Employee.__dict__:", Employee.__dict__)
+
+
+output:
+
+Employee.__doc__: None
+Employee.__name__: Employee
+Employee.__module__: __main__
+Employee.__bases__: (<class 'object'>,)
+Employee.__dict__: {'__module__': '__main__', 'empCount': 0, '__init__': <function Employee.__init__ at 0x7c86c0434f40>, '__dict__': <attribute '__dict__' of 'Employee' objects>, '__weakref__': <attribute '__weakref__' of 'Employee' objects>, '__doc__': None}
+
+
+
+
+
+
+Access modifiers:
+
+Public: Open to everyone.
+
+Protected (_): A hint to other coders: "Don't use this outside the class/subclass." (It still works if you try, but it's bad practice).
+
+Private (__): Python renames the variable internally (e.g., _Class__name) to make it hard to access accidentally.
+
+
+lass samples:
+  a = 10
+  _b = 20
+  _c = 88
+  def display(self):
+    print("class c:",sample._c)
+s1 = samples()
+print(s1.a)
+print(s1._b)
+print(s1._c)
+
+
+output:
+10
+20
+88
+
+
+Abstraction:
+
+Abstraction is the concept of hiding complex implementation details and showing only the essential features of an object.
+
+It focuses on what an object does instead of how it does it.
+
+Real-World Analogy: The Coffee Machine When you use a coffee machine, you only interact with a button.
+
+The Interface (Abstact): The "Make Coffee" button.
+
+The Complexity (Hidden): The grinding of beans, heating of water, and pressure regulation happening inside. You don't need to understand these to get your drink.
+
+Task 1: The "Digital Garage" (Classes & Objects)
+Scenario: You are building a car rental app.
+
+Create a class called Car.
+
+Give it two attributes: brand and fuel_type.
+
+Create a method called display_info that prints: "This is a [brand] running on [fuel_type]."
+
+The Goal: Create two different objects: car1 (a Tesla on Electric) and car2 (a Ford on Petrol), then call the display_info method for both.
+
+
+
+
+class Car:
+    def __init__(self, brand, fuel_type):
+        self.brand = brand
+        self.fuel_type = fuel_type
+
+    def display_info(self):
+        print(f"This is a {self.brand} running on {self.fuel_type}")
+
+Car1 = Car("TATA", "petrol")
+Car2 = Car("TESLA", "EV")
+
+Car1.display_info()
+Car2.display_info()
+
+
+output:
+
+
+This is a TATA running on petrol
+This is a TESLA running on EV
+
+
+Task 2: The "Secret Vault" (Access Modifiers)
+Scenario: You are managing a bank account where the balance should be protected.
+
+Create a class BankAccount.
+
+Define a private attribute called __balance and set it to 1000.
+
+Create a public method called get_balance.
+
+The Goal: Try to print the balance directly from outside the class (it should fail). Then, use the get_balance method to see the money safely.
+
+
+
+
+class BankAccount:
+    def __init__(self, _balance):
+        self._balance = _balance
+
+    def get_balance(self):
+        return self._balance
+
+account = BankAccount(1000)
+print(account._balance)       
+print(account.get_balance())
+
+
+
+output:
+
+1000
+1000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
