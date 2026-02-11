@@ -1,0 +1,88 @@
+Scenario: The ATM Security System 
+When you use an ATM, the machine has to make multiple decisions. First, it checks if your PIN is correct. If it is, it then needs to check if you have enough money in your account to complete the withdrawal.
+1.	Rule 1: Check if entered_pin matches correct_pin.
+2.	Rule 2 (Nested): If the PIN is correct, check if the withdrawal_amount is less than or equal to the account_balance.
+3.	Otherwise: If the PIN is wrong, it shouldn't even look at your balance; it should just show an error.
+4.	Many ATMs can only dispense specific denominations, like $500 notes. 
+
+
+CODE:
+
+correct_pin = 1234
+account_balance = 1300
+entered_pin = int(input("Enter your pin:"))
+
+daily_limit = 2500
+if correct_pin == entered_pin:
+    withdrawal_amount = int(input("Enter amount:"))
+    if withdrawal_amount % 500 ==0:
+        if withdrawal_amount <= daily_limit:
+            if withdrawal-amount <= account_balance:
+                print("Transaction Successful!..")
+            else:
+                print("insufficient balance..")
+        else:
+            print("Error:Amount exceeds daily limit.")
+    else:
+        print("Error:Machine only dispenses 500 notes.")
+else:
+    print("Incorrect PIN")
+
+
+
+
+
+Scenario: The Online Discount System 
+Imagine you are coding the checkout page for a store. 
+Stage 1: The Spending Threshold (The "Gatekeeper")
+The system first checks if the cart value meets the minimum requirement. If it doesn't, it stops immediately to save processing power.
+
+Stage 2: The Loyalty Verification (The "Multiplier")
+Once the spending goal is met, the system checks the user's account status. This is where your nested logic lives. Gold members get a "VIP" rate, while standard users get a "Base" rate.
+
+Stage 3: The Coupon Overlay (The "Bonus")
+A real system allows for an extra "nudge." If the user enters a specific code, we can stack a small additional discount or provide a flat-rate deduction.
+
+Stage 4: Final Calculation & Summary
+The system applies the math and outputs a clear breakdown for the customer.
+
+
+CODE:
+
+
+total_spend = float(input("Enter cart total: "))
+membership_level = "Gold"  # Options: None, "Silver", "Gold"
+coupon_input = input("Enter coupon code (Optional): ").strip().upper()
+
+
+if total_spend >= 500:
+    base_discount = 0.25  
+elif total_spend >= 200:
+    base_discount = 0.15  
+elif total_spend >= 100:
+    base_discount = 0.10  
+else:
+    base_discount = 0.0
+
+if base_discount > 0:
+    if membership_level == "Gold":
+        base_discount += 0.05  # Extra 5% for Gold
+    elif membership_level == "Silver":
+        base_discount += 0.02  # Extra 2% for Silver
+
+if coupon_input == "SAVE55" and total_spend > 50:
+    print(" Coupon 'SAVE55' Applied!")
+    base_discount += 0.05
+
+
+discount_amount = total_spend * base_discount
+final_total = total_spend - discount_amount
+
+shipping_cost = 0 if final_total >= 150 else 15.0
+
+print("-" * 30)
+print(f"Original Total: ${total_spend:.2f}")
+print(f"Applied Discount: {base_discount * 100:.0f}% (-${discount_amount:.2f})")
+print(f"Shipping Fee: ${shipping_cost:.2f}")
+print(f"Final Amount to Pay: ${final_total + shipping_cost:.2f}")
+print("-" * 30)
