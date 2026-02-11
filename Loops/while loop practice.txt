@@ -1,0 +1,72 @@
+Task 1: The Smart Thermostat (State Control)
+Scenario: You are programming a smart thermostat. It needs to keep the heater running until the room reaches a target temperature.
+Initial Temp: 18
+Target Temp: 22
+
+
+
+code:
+
+current_temp = int(input("Enter your room temp.: "))
+target_temp = int(input("Enter target room temp.: "))
+increment = 0.5
+print(f"Heater ON Initial temperature:{current_temp}C")
+while current_temp < target_temp:
+    current_temp = current_temp + increment
+    print(f"Heating..current Temperature:{round(current_temp,1)}")
+    
+print("Target reached.Heater OFF..")
+
+
+
+
+Task 2: The Digital Vault (Security)
+Scenario: A user is trying to unlock a high-security folder. You must allow them to try the password, but for security, you must shut down the system after 3 failed attempts.
+The Password: "Pavan999"
+Requirement: * Ask for input.
+If correct, print "Access Granted" and break.
+If wrong, tell them how many attempts are left.
+If they run out of attempts, print "System Locked."
+
+code:
+
+correct_password = "98765"
+attempts = 0
+max_trails = 3
+
+
+while attempts<max_trails:
+    entered_password = int(input("Enter your password(5 digits only): "))
+    if entered_password == correct_password:
+        print("Access Granted. Welcome to the valut.")
+        break
+    else:
+        attempts = attempts + 1
+        reamining = max_trails - attempts
+        if reamining > 0:
+            print(f"Incorrrect.you have to {reamining} attempts left..")
+        else:
+            print("SYSTEM LOCKED.Unauthorized access detected.")
+        print("")
+
+
+
+
+Task 3: The "Infinite" Shopping Cart
+In this version, we start the total at 0 and keep the loop running until the user decides they are finished.
+
+code:
+
+total_bill = 0
+item_price = input("Enter an item price (or type 'done' to finish): ")
+print("   Welcome to the hotel.")
+while item_price != "done":
+    total_bill = total_bill + float(item_price)
+    print(f"Current bill = ${total_bill}")
+    print("-------------*******--------------")
+    item_price = input("Enter an item price (or type 'done' to finish): ")
+print(f"Final bill: ${total_bill}")
+print("Thank you for coming to my hotel!")
+
+
+

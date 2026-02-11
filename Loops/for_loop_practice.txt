@@ -1,0 +1,96 @@
+Task-1:
+The E-commerce Receipt (Summing Data)
+Imagine you have a shopping cart represented as a list of prices. You need to calculate the total cost and apply a tax.
+
+code:
+cart_prices = list(map(float, input("Enter item prices separated by space: ").split()))
+sub_total = 0
+for price in cart_prices:
+    sub_total = sub_total + price
+sales_tax_rate = float(input("Enter a tax rate (e.g., 0.07 for 7%):"))  #7% tax
+tax_amount = sub_total * sales_tax_rate
+total = sub_total + tax_amount
+print(" RECEIPT  ")
+print(f"subtotal: ${sub_total:.2f}")
+print(f"Tax: ${tax_amount:.2f}")
+print(f"Total: ${total:.2f}")
+
+
+Task-2:
+
+The Email Filter (Validation & Cleaning)
+In software, we often get "dirty" data. Imagine a list of user-submitted emails where some are missing the "@" symbol. We want to find the valid ones.
+
+code:
+user_emails = list(map(str, input("Enter emails separated by space: ").split()))
+
+valid_emails = []
+
+for email in user_emails:
+    if "@" in email:
+        valid_emails.append(email)
+        print(f"Verified: {email}")
+    else:
+        print(f"Discarded: {email}")
+
+print(f"\nCleaned List: {valid_emails}")
+
+
+
+
+Task-3:
+
+
+Stock Alert System (Conditionals in Loops)
+Imagine you are tracking stock prices. You want the program to "alert" you only when a price drops below a certain threshold.
+
+
+code:
+data = input("Enter company names and prices separated by space: ").split() 
+stocks = {data[i]: float(data[i+1]) 
+for i in range(0, len(data),2)}
+
+buy_threshold = 800
+
+for company, price in stocks.items():
+    if price < buy_threshold:
+        print(f"ALERT: {company} is a bargain at ${price:.2f}! Consider buying.")
+    else:
+        print(f"{company} is currently ${price:.2f} (Too expensive).")
+
+
+Task - 4:
+
+Divide even and odd numbers in any given list and print EVEN beside even numbers and ODD beside odd numbers(Even numbers together and odd numbers together)
+
+code:
+
+
+
+def sort_and_label_numbers(my_list):
+    evens = []
+    odds = []
+
+    # Separate the numbers into two lists
+    for num in my_list:
+        if num % 2 == 0:
+            evens.append(f"{num} EVEN")
+        else:
+            odds.append(f"{num} ODD")
+
+    # Print evens first, then odds
+    for entry in evens + odds:
+        print(entry)
+
+# Example Usage:
+my_list = list(map(int,(input("Enter numbers separated by space: ")).split()))
+sort_and_label_numbers(my_list)
+
+
+
+
+
+
+
+
+
