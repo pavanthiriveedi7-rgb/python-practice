@@ -1,0 +1,62 @@
+                                                    Tuples_practice
+
+
+student_names = {"pavan","hulk","suresh","bramaiah"}
+print(student_names)
+
+
+output:
+
+{'hulk', 'pavan', 'bramaiah', 'suresh'}
+
+
+Set Operations (The "Venn Diagram" Logic) -->Union (|) Combines two sets (all items from both, no duplicates). -->Intersection (&) Finds items present in both sets. -->Difference (-) Items in the first set but not in the second. -->Symmetric Difference (^) Items in either set, but not in both.
+
+
+Cse_A = {"pavan","vijay","malli","kumar","gouse"}
+Cse_B = {"pujith","sai","balaiah","prabhas"}
+CSE = Cse_A | Cse_B
+print(CSE)
+CSE = print(Cse_A & Cse_B)
+print(Cse_A - Cse_B)
+print(Cse_A ^ Cse_B)
+
+
+output:
+
+
+
+{'balaiah', 'pavan', 'vijay', 'gouse', 'prabhas', 'sai', 'kumar', 'pujith', 'malli'}
+set()
+{'pavan', 'vijay', 'gouse', 'kumar', 'malli'}
+{'balaiah', 'pavan', 'vijay', 'gouse', 'prabhas', 'sai', 'kumar', 'pujith', 'malli'}
+
+
+
+
+add(): Adds a single element.
+
+update(): Adds multiple elements (list, tuple, or set).
+
+remove(): Removes an item (throws error if not found).
+
+discard(): Removes an item (does not throw error if not found—safer).
+
+
+
+
+Cse_A = {"pavan","vijay","malli","kumar","gouse"}
+Cse_A.add("ntr")
+Cse_A.update("ntr")
+Cse_A.remove("ntr")
+Cse_A.discard("kumar")
+print(Cse_A)
+
+
+
+output:
+
+
+{'r', 'vijay', 't', 'pavan', 'malli', 'n', 'gouse'}
+
+
